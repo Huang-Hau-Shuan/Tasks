@@ -60,7 +60,9 @@ public class Datamanager {
             ArrayList<String> dataItems = readFile();
             taskList = parse(dataItems);
         } catch (IOException e) {
-            e.printStackTrace();
+            // give a reasonable message to the user, but do not print the stack trace
+            System.out.println(e.getMessage());
+            // e.printStackTrace();
         }
         return taskList;
     }
